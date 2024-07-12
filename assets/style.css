@@ -1,0 +1,634 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'ubuntum';
+}
+
+@font-face {
+    font-family: 'ubuntu';
+    src: url('fonts/Ubuntu-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ubuntub';
+    src: url('fonts/Ubuntu-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ubuntum';
+    src: url('fonts/Ubuntu-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.clear{
+    clear: both;
+    display: block;
+}
+body {
+    background-color: rgb(211, 230, 247);
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+#box {
+    display: block;
+    padding: 30px;
+    width: 1640px;
+    height: 1040px;
+    background-color: white;
+    margin: 20px auto;
+    border-radius: 20px;
+}
+
+#sidebar {
+    display: block;
+    float: left;
+    background-image: url("/assets/images/bg-sidebar-desktop.svg");
+    background-size: 100%;
+    width: 460px;
+    height: 995px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.sidebar-item {
+    display: block;
+    width: 75%;
+    height: 100px;
+    margin: 0px auto;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.sidebar-item:first-child {
+    margin-top: 70px;
+}
+
+.sidebar-item i {
+    display: block;
+    float: left;
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    text-align: center;
+    line-height: 58px;
+    font-style: normal;
+    font-size: 30px;
+    font-weight: 600;
+    border: 3px solid white;
+    color: white;
+    margin-top: -20px;
+    margin-right: 30px;
+}
+
+.sidebar-item .sidebar-step {
+    font-size: 25px;
+    margin-top: -20px;
+    color: white;
+    opacity: .7;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'ubuntu';
+    margin-bottom: 5px;
+}
+
+.sidebar-item .sidebar-info {
+    font-size: 27px;
+    color: white;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: bolder;
+    font-family: 'ubuntub';
+}
+
+.desseleccionado {
+    background-color: rgb(72, 62, 255) !important;
+    color: white !important;
+    border: 3px solid white !important;
+    animation: desseleccionado .2s linear;
+}
+
+@keyframes desseleccionado {
+    0% {
+        background-color: rgb(190, 225, 253);
+        color: rgb(0, 34, 75);
+        border: 3px solid rgb(190, 225, 253);
+    }
+
+    100% {
+        background-color: rgb(72, 62, 255);
+        color: white;
+        border: 3px solid white;
+    }
+}
+
+.seleccionado {
+    background-color: rgb(190, 225, 253);
+    color: rgb(0, 34, 75) !important;
+    border: 3px solid rgb(190, 225, 253) !important;
+    animation: selecciona .2s linear;
+}
+
+@keyframes selecciona {
+    0% {
+        background-color: rgb(72, 62, 255);
+        color: white;
+        border: 3px solid white;
+    }
+
+    100% {
+        background-color: rgb(190, 225, 253);
+        color: rgb(0, 34, 75);
+        border: 3px solid rgb(190, 225, 253);
+    }
+}
+
+.step {
+    display: block;
+    position: absolute;
+    float: right;
+    width: 880px;
+    margin-left: 660px;
+    height: 895px;
+    padding: 0px;
+    border-radius: 20px;
+    padding-top: 75px;
+}
+
+.step1,
+.step2,
+.step3,
+.step4,
+.step5 {
+    transition: all .3s;
+}
+
+.title {
+    font-size: 60px;
+    font-family: 'ubuntub';
+    color: rgb(0, 34, 75);
+}
+
+.subtitle {
+    opacity: .4;
+    font-size: 30px;
+    font-family: 'ubuntu';
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+
+.step1-label {
+    font-size: 25px;
+    opacity: .8;
+    color: rgb(0, 34, 75);
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.step1-label .advice {
+    color: red;
+    font-family: 'ubuntum';
+    margin-right: -50px;
+    transition: all .3s;
+}
+
+.advice-appears {
+    opacity: 1;
+    animation: appearse 1s linear;
+}
+
+.advice-disappears {
+    opacity: 0;
+    animation: disappearse 1s linear;
+}
+
+@keyframes appears {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes disappears {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.index-0 {
+    z-index: 0;
+}
+
+.zindex-1 {
+    z-index: 1;
+}
+
+.step1-input {
+    width: 825px;
+    outline: none;
+    outline-style: none;
+    padding: 25px;
+    border: 3px solid #ccc;
+    color: #828282;
+    font-size: 30px;
+    border-radius: 10px;
+    opacity: 1;
+    transition: all .3s;
+    margin-bottom: 45px;
+    color: rgb(0, 34, 75);
+}
+
+.step1-input:focus {
+    opacity: 1;
+    border: 3px solid rgb(83, 77, 149);
+    color: rgb(0, 34, 75);
+}
+
+.border-red {
+    border: 3px solid red;
+}
+
+.border-normal {
+    border: 3px solid #ccc;
+}
+
+.next-step {
+    display: block;
+    float: right;
+    padding: 27px 45px 27px 45px;
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: rgb(0, 34, 75);
+    color: white;
+    text-align: center;
+    margin-top: 100px;
+    transition: all .3s;
+    cursor: pointer;
+}
+.back-step {
+    display: block;
+    float: left;
+    padding: 27px 45px 27px 45px;
+    font-size: 30px;
+    border: white;
+    border-radius: 10px;
+    color: #ccc;
+    background-color: white;
+    text-align: center;
+    margin-top: 100px;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.back-step:hover {
+    color: #555;
+}
+
+.next-step:hover {
+    background-color: rgb(23, 74, 139);
+}
+
+.content {
+    display: block;
+    width: 100%;
+    height: 530px;
+
+}
+
+.content .card {
+    display: block;
+    width: 28%;
+    height: 300px;
+    padding: 4.5px;
+    padding-bottom: 15px;
+    float: left;
+    border: 3px solid #ccc;
+    border-radius: 20px;
+    margin: 15px;
+    cursor: pointer;
+    transition: all .5s;
+    overflow: hidden;
+}
+
+.content .extendido {
+    height: 360px;
+}
+
+.content .noextendido {
+    height: 300px;
+}
+
+.checked {
+    border: 3px solid rgb(83, 77, 149) !important;
+    background-color: aliceblue;
+    opacity: .8;
+}
+
+.content .card:hover {
+    border: 3px solid rgb(83, 77, 149) !important;
+    background-color: aliceblue;
+    opacity: .8;
+}
+
+.notchecked {
+    border: 3px solid #ccc;
+    background-color: white;
+}
+
+.content .card img {
+    width: 80px;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-bottom: 100px;
+}
+
+.content .card .plan-name {
+    margin-left: 20px;
+    color: rgb(0, 34, 75);
+    font-size: 28px;
+    font-family: 'ubuntum';
+    margin-bottom: 10px;
+}
+
+.content .card .plan-price {
+    margin-left: 20px;
+    font-size: 25px;
+    font-family: 'ubuntum';
+    opacity: .4;
+}
+
+.content .card .plan-year {
+    display: block;
+    margin-left: 10px;
+    margin-top: 30px;
+    font-size: 23px;
+    padding: 10px;
+    font-family: 'ubuntu';
+    color: rgb(0, 34, 75);
+}
+
+.display-none {
+    display: none;
+}
+
+.content .caja {
+    clear: both;
+    display: block;
+    width: 840px;
+    margin: 15px;
+    border-radius: 10px;
+    height: 100px;
+    background-color: aliceblue;
+    text-align: center;
+    font-size: 30px;
+    color: rgb(0, 34, 75);
+}
+
+.content .caja i {
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 70px;
+    margin-left: 70px;
+    display: block;
+    display: inline-block;
+    width: 100px;
+    height: 46px;
+}
+
+.content .caja i #ball-i {
+    display: block;
+    width: 100px;
+    height: 46px;
+    margin: 15px;
+    margin-left: -5px;
+    border-radius: 100px;
+    background-color: rgb(0, 34, 75);
+    position: absolute;
+    cursor: pointer;
+}
+.content .caja i #ball-i #ladefinitiva86{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: white;
+    content: '';
+    margin-top: 8px;
+    margin-left: 8px;
+    transition: all .3s;
+}
+.decidir{
+    margin-left: 60px !important;
+}
+.nodecidir{
+    margin-left: 8px !important;
+}
+#check-yearly{
+    transition: all .3s;
+}
+#check-monthly{
+    transition: all .3s;
+}
+.azul{
+    color: rgb(0, 34, 75);
+    opacity: .9;
+}
+.gris{
+    color: #555;
+    opacity: .6;
+}
+.addons{
+    display: block;
+    width: 90%;
+    padding: 30px;
+    height: 80px;
+    border-radius: 10px;
+    border: solid 3px #ccc;
+    font-size: 25px;
+    margin-bottom: 30px;
+    transition: all .5s;
+}
+.service-icon{
+    display: block;
+    width: 45px;
+    height: 45px;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 50px;
+    border: 5px solid #ccc;
+    font-size: 25px;
+    line-height: 45px;
+    text-align: center;
+    color: white;
+    transition: all .5s;
+}
+.addons:hover{
+    background-color: aliceblue;
+    border: solid 3px rgb(72, 62, 255);
+}
+.addons:hover .add-left .service-icon{
+    border: solid 5px rgb(72, 62, 255);
+    color: rgb(72, 62, 255);
+}
+.addons-active{
+    background-color: aliceblue ;
+    border: solid 3px rgb(72, 62, 255) ;
+}
+.addons-notactive{
+    background-color: white ;
+    border: solid 3px #ccc ;
+}
+.service-icon-active{
+    border: solid 5px rgb(72, 62, 255) ;
+    color: rgb(72, 62, 255) ;
+}
+.service-icon-notactive{
+    border: solid 5px #ccc ;
+    color: white ;
+}
+.addons .add-left{
+    display: block;
+    float: left;
+    width: 10%;
+    height: 80px;
+}
+.addons .add-left input{
+display: none;
+}
+.addons .add-right{
+    float: left;
+    width: 700px;
+    height: 80px;
+}
+.add-title{
+font-size: 30px;
+color: rgb(0, 34, 75);
+font-family: 'ubuntum';
+margin-left: 10px;
+}
+.add-description{
+    font-size: 28px;
+    color: rgb(0, 34, 75);
+    font-family: 'ubuntum';
+    opacity: .5;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.add-price{
+    float: right;
+    margin-top: -50px;
+    color: rgb(72, 62, 255);
+}
+.contenedor-f5{
+    display: block;
+    text-align: center;
+    width: 90%;
+}
+.contenedor-f5 img{
+    display: block;
+    width: 150px;
+    margin: 70px auto;
+    margin-top: 250px;
+}
+.contenedor-f5 .f5-title{
+font-size: 60px;
+margin-bottom: 30px;
+color: rgb(0, 34, 75);
+font-family: 'ubuntub';
+}
+.contenedor-f5 .f5-p{
+font-size: 28px;
+color: #555;
+font-family: 'ubuntu';
+opacity: .5;
+line-height: 40px;
+}
+.cajafinal{
+    display: block;
+    width: 90%;
+    background-color: rgb(247, 251, 255);
+    padding: 50px;
+    border-radius: 20px;
+}
+.plan-final{
+    display: block;
+    height: 70px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #ccc;
+}
+.final-title{
+    display: block;
+    font-size: 28px;
+    color: rgb(0, 34, 75);
+    opacity: .8;
+    font-family: 'ubuntub';
+}
+.final-change{
+    color: rgb(131, 121, 245);
+    font-size: 25px;
+    font-family: 'ubuntum';
+    margin-top: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .3s;
+}
+.final-change:hover{
+opacity: 1;
+text-decoration: underline;
+}
+.final-price{
+  color: rgb(0, 55, 122);
+  font-size: 28px;
+  margin-top: 20px;
+  font-family: 'ubuntub';
+}
+.final-addons{
+    display: block;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 25px;
+}
+.final-addon{
+    color: #555;
+    opacity: .6;
+    font-family: 'ubuntu';
+}
+.final-addon-price{
+    color: rgb(0, 34, 75);
+}
+.final-sum-price{
+    font-size: 35px;
+    color: rgb(88, 80, 177);
+    font-family: 'ubuntub';
+}
+.display-none{
+    display: none !important;
+}
+.display-block{
+    display: block !important;
+}
+
+
+
+
+

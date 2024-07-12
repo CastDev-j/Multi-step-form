@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="assets/style.css">
+  <title>Frontend Mentor | Multi-step form</title>
+</head>
+
+<body>
+
+  <div id="box">
+    <!-- Sidebar start -->
+
+    <div id="sidebar">
+
+      <div class="sidebar-item" onclick="selecciona(1)">
+        <i class="item seleccionado">1</i>
+        <div class="left">
+          <div class="sidebar-step">Step 1</div>
+          <div class="sidebar-info">Your info</div>
+        </div>
+      </div>
+      <div class="sidebar-item" onclick="selecciona(2)">
+        <i class="item">2</i>
+        <div class="left">
+          <div class="sidebar-step">Step 2</div>
+          <div class="sidebar-info">Select plan</div>
+        </div>
+      </div>
+      <div class="sidebar-item" onclick="selecciona(3)">
+        <i class="item">3</i>
+        <div class="left">
+          <div class="sidebar-step">Step 3</div>
+          <div class="sidebar-info">Add-ons</div>
+        </div>
+      </div>
+      <div class="sidebar-item" onclick="selecciona(4)">
+        <i class="item">4</i>
+        <div class="left">
+          <div class="sidebar-step">Step 4</div>
+          <div class="sidebar-info">Summary</div>
+        </div>
+      </div>
+      <div class="sidebar-item" onclick="selecciona(5)">
+        <i class="item">5</i>
+        <div class="left">
+          <div class="sidebar-step">Thanks you!</div>
+          <div class="sidebar-info">For visit!</div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <!-- Sidebar end -->
+
+    <!-- Step 1 start -->
+    <div class="step step1 zindex-1" id="fi-step">
+      <div class="title">
+        Personal info
+      </div>
+      <div class="subtitle">
+        Please provide your name, email address, and phone number.
+      </div>
+
+      <div class="step1-form">
+        <div class="step1-label">Name <span class="right advice advice-disappears" id="advice-nombre">This Field Is
+            Requeried</span></div>
+        <input class="step1-input" type="text" name="" placeholder="e.g. Stephen King" id="nombre"
+          onclick="innputStepOne('nombre')">
+      </div>
+      <div class="step1-form">
+        <div class="step1-label">Email Address <span class="right advice advice-disappears" id="advice-correo">This
+            Field Is Requeried</span></div>
+        <input class="step1-input" type="text" name="" placeholder="e.g. stephenking@lorem.com" id="correo"
+          onclick="innputStepOne('correo')">
+      </div>
+      <div class="step1-form">
+        <div class="step1-label">Phone Number <span class="right advice advice-disappears" id="advice-telefono">This
+            Field Is Requeried</span></div>
+        <input class="step1-input" type="text" name="" placeholder="e.g. +1 234 567 890" id="telefono"
+          onclick="innputStepOne('telefono')">
+      </div>
+      <button class="next-step" id="next-1" onclick="stepOne(1) ">
+        Next Step
+      </button>
+
+
+    </div>
+    <!-- Step 1 end -->
+
+    <!-- Step 2 start -->
+    <div class="step step2 advice-disappears" id="s-step">
+      <div class="title">
+        Select your plan
+      </div>
+      <div class="subtitle">
+        You have the option of monthly or yearly billing.
+      </div>
+
+
+
+      <div class="content">
+        <input type="radio" class="display-none content-card" id="arcade" name="plan" value="9" />
+        <input type="radio" class="display-none content-card" id="advanced" name="plan" value="12" />
+        <input type="radio" class="display-none content-card" id="pro" name="plan" value="15" />
+
+        <label class="card card-my" id="card1" for="arcade" onclick="checkcard(0)">
+          <img src="assets/images/icon-arcade.svg" alt="">
+          <div class="plan-name">
+            Arcade
+          </div>
+          <div class="plan-price">
+            $<span id="plan-price-0">9</span>/mo
+          </div>
+          <div class="plan-year">
+            2 months free
+          </div>
+        </label>
+
+        <label class="card card-my" id="card2" for="advanced" onclick="checkcard(1)">
+          <img src="assets/images/icon-advanced.svg" alt="">
+          <div class="plan-name">
+            Advanced
+          </div>
+          <div class="plan-price">
+            $<span id="plan-price-1">12</span>/mo
+          </div>
+          <div class="plan-year">
+            2 months free
+          </div>
+        </label>
+
+        <label class="card card-my" id="card3" for="pro" onclick="checkcard(2)">
+          <img src="assets/images/icon-pro.svg" alt="">
+          <div class="plan-name">
+            Pro
+          </div>
+          <div class="plan-price">
+            $<span id="plan-price-2">15</span>/mo
+          </div>
+          <div class="plan-year">
+            2 months free
+          </div>
+        </label>
+        <input type="checkbox" value="year" name="year-month" id="check-my" class="display-none">
+        <div><label class="caja" for="check-my"><span id="check-monthly" class="azul">Monthly</span><i
+              onclick="extender()"><span id="ball-i" onclick="decidir()">
+                <div id="ladefinitiva86"></div>
+              </span></i><span id="check-yearly" class="gris">Yearly</span></label></span>
+        </div>
+      </div>
+      <button class="back-step" id="back-2" onclick="selecciona(1)">
+        Go Back
+      </button>
+      <button class="next-step" id="next-2" onclick="almacena(3)">
+        Next Step
+      </button>
+    </div>
+    <!-- Step 2 end -->
+
+    <!-- Step 3 start -->
+    <div class="step step3 advice-disappears" id="t-step">
+      <div class="title">
+        Pick add-ons
+      </div>
+      <div class="subtitle">
+        Add-ons help enhance your gaming experience.
+      </div>
+
+
+
+      <label for="service" class="addons" id="serviceq" onclick="addon(0)">
+        <div class="add-left">
+          <input type="checkbox" name="service" id="service">
+          <i id="services" class="service-icon"></i>
+        </div>
+        <div class="add-right">
+          <div class="add-title">Online service</div>
+          <div class="add-description">Access to multiplayer games</div>
+          <div class="add-price" id="noseservicio">+$<span class="add-prices" id="yaquetermines1">1</span>/<span class="add-plans">mo</span></div>
+        </div>
+      </label>
+
+      <label for="storage" class="addons" id="storageq" onclick="addon(1)">
+        <div class="add-left">
+          <input type="checkbox" name="storage" id="storage">
+          <i id="storages" class="service-icon"></i>
+        </div>
+        <div class="add-right">
+          <div class="add-title">Larger storage</div>
+          <div class="add-description">Extra 1TB of cloud save</div>
+          <div class="add-price" id="nosestorage">+$<span class="add-prices" id="yaquetermines2">2</span>/<span class="add-plans">mo</span></div>
+        </div>
+      </label>
+
+      <label for="profile" class="addons" id="profileq" onclick="addon(2)">
+        <div class="add-left">
+          <input type="checkbox" name="profile" id="profile">
+          <i id="profiles" class="service-icon"></i>
+        </div>
+        <div class="add-right">
+          <div class="add-title">Customizable Profile</div>
+          <div class="add-description">Custom theme on your profile</div>
+          <div class="add-price" id="noseprofile">+$<span class="add-prices" id="yaquetermines3">2</span>/<span class="add-plans">mo</span></div>
+        </div>
+      </label>
+
+
+      <button class="back-step" id="back-3" onclick="selecciona(2)">
+        Go Back
+      </button>
+      <button class="next-step" id="next-3" onclick="addAddons(4)">
+        Next Step
+      </button>
+
+
+
+    </div>
+
+
+    <!-- Step 3 end -->
+
+    <!-- Step 4 start -->
+    <div class="step step4 advice-disappears" id="fo-step">
+      <div class="title">
+        Finishing up
+      </div>
+      <div class="subtitle">
+        Double-check everything looks OK before confirming.
+      </div>
+
+      <div class="cajafinal">
+        <div class="plan-final">
+          <div class="left">
+            <div class="final-title" id="title-ended">
+              Arcade (Monthly)
+            </div>
+            <div class="final-change" onclick="selecciona(2)">
+              Change
+            </div>
+          </div>
+          <div class="right">
+            <div class="final-price" id="price-ended">$9/mo</div>
+          </div>
+        </div>
+        <div class="final-addons" id="service-final">
+          <div class="left final-addon">Online Service</div>
+          <div class="right final-addon-price" id="addon-price-time">+$1/mo</div>
+        </div>
+        <div class="final-addons" id="storage-final">
+          <div class="left final-addon">Larger storage</div>
+          <div class="right final-addon-price" id="storage-price-time">+$2/mo</div>
+        </div>
+        <div class="final-addons" id="profile-final">
+          <div class="left final-addon">Customizable Profile</div>
+          <div class="right final-addon-price" id="profile-price-time">+$2/mo</div>
+        </div>
+      </div>
+
+
+
+      <!-- Dynamically add subscription and add-on selections here -->
+      <div class="final-addons">
+        <div class="left final-addon">Total (per month/year)</div>
+        <div class="right final-sum-price" id="ya-termino">+$14/mo</div>
+      </div>
+      
+
+      <button class="back-step" id="back-4" onclick="selecciona(3)">
+        Go Back
+      </button>
+      <button class="next-step" id="next-4" onclick="selecciona(5)">
+        Next Step
+      </button>
+    </div>
+
+
+
+
+    <!-- Step 4 end -->
+
+    <!-- Step 5 start -->
+    <div class="step step5 advice-disappears" id="f-step">
+      <div class="contenedor-f5">
+        <img src="assets/images/icon-thank-you.svg" alt="">
+        <div class="f5-title">Thank you!</div>
+        <div class="f5-p">
+          Thanks for confirming your subscription! We hope you have fun
+          using our platform. If you ever need support, please feel free
+          to email us at support@loremgaming.com.
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Step 5 end -->
+  </div>
+
+  <script src="code.js"></script>
+</body>
+
+</html>
