@@ -6,21 +6,21 @@
 
 @font-face {
     font-family: 'ubuntu';
-    src: url('fonts/Ubuntu-Regular.ttf') format('truetype');
+    src: url('./fonts/Ubuntu-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'ubuntub';
-    src: url('fonts/Ubuntu-Bold.ttf') format('truetype');
+    src: url('./fonts/Ubuntu-Bold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'ubuntum';
-    src: url('fonts/Ubuntu-Medium.ttf') format('truetype');
+    src: url('./fonts/Ubuntu-Medium.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -53,7 +53,7 @@ body {
 #sidebar {
     display: block;
     float: left;
-    background-image: url("/assets/images/bg-sidebar-desktop.svg");
+    background-image: url("./images/bg-sidebar-desktop.svg");
     background-size: 100%;
     width: 460px;
     height: 995px;
